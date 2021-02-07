@@ -16,6 +16,11 @@ class Elo7Spider(CrawlSpider):
             LinkExtractor(restrict_css=('.category'))  # ir a cada subcategoria
         ),
         Rule(
+            LinkExtractor(
+                restrict_xpaths=('//a[@class="btn btn-yellow"]')
+            )  # próxima págiina
+        ),
+        Rule(
             LinkExtractor(restrict_css=('.img-link')),  # acessar cada produto
             callback='parse_product',
         ),
@@ -26,19 +31,21 @@ class Elo7Spider(CrawlSpider):
 
         name = response.xpath('//h1[@itemprop="name"]//text()').get()
         price = response.xpath('//span[@itemprop="price"]//text()').get()
-        image = response.xpath('//img[@itemprop="thumbnailUrl"]').getall()
-        details = ' - '.join(
-            response.xpath(
-                '//div[@class="content details"]//li//text()'
-            ).getall()
+        details = ' '.join(
+            ''.join(
+                response.xpath(
+                    '//div[@class="content details"]//li//text()'
+                ).getall()
+            ).split()
         )
         category = response.css('a.category::text').get()
         subcategory = response.css('a.category::text').getall()[1]
 
         items['name'] = name
         items['price'] = price
-        items['image'] = image
         items['details'] = details
         items['category'] = category
         items['subcategory'] = subcategory
         items['url'] = response.url
+
+        yield items
