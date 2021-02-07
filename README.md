@@ -1,6 +1,6 @@
 # Web Crawler Elo7
 
-Um Crawler do site [Elo7](https://www.elo7.com.br/) para obter o nome, preço, descrição, o link da imagem do produto e o link da página, de todos os produtos do site.
+Um Crawler do site [Elo7](https://www.elo7.com.br/) para obter o nome, preço, detalhes, categoria, subcategoria e o link da página, de todos os produtos do site.
 
 ## Pré-requisitos
 Para você rodar o projeto é necessário tem instalado em sua máquina o `Python3.6+`.
