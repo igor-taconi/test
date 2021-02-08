@@ -27,7 +27,7 @@ class Elo7Pipeline:
 				details TEXT,
 				category TEXT,
                 subcategory TEXT,
-				url TEXT
+				url TEXT UNIQUE
 			)
 		"""
         self.cursor.execute(sql)
