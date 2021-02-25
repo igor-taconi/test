@@ -13,7 +13,7 @@ git clone https://github.com/igor-taconi/web-crawling-elo7.git
 -   Crie um virtualenv com Python 3.
 ```
 cd web-crawling-elo7
-python3 -m venv .venv
+python -m venv .venv
 ```
 -   Ative o virtualenv.
 ```
