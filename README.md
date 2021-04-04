@@ -8,7 +8,7 @@ Para você rodar o projeto é necessário tem instalado em sua máquina o `Pytho
 ## Como rodar esse projeto
 -   Clone esse repositório.
 ```
-git clone https://github.com/igor-taconi/web-crawling-elo7.git
+git clone https://github.com/taconi/web-crawling-elo7.git
 ```
 -   Crie um virtualenv com Python 3.
 ```
